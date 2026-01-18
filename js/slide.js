@@ -3,8 +3,11 @@ let btn_slide = document.querySelectorAll('.btn_slide');
 let b = document.querySelector('body')
 let end_text = document.querySelector('.end_text')
 
-
-let end_music = new Audio("../music/end.mp3");
+let end_music;
+const endtestAudio = new Audio();
+const endcanPlayMP3 = endtestAudio.canPlayType('audio/mpeg');
+const endcanPlayOGG = endtestAudio.canPlayType('audio/ogg');
+const endcanPlayWAV = endtestAudio.canPlayType('audio/WAV');
 
 // menu_btns
 
@@ -39,6 +42,18 @@ n_world.forEach(item => {
         next_slide();
     })
 })
+
+// Выбираем формат в зависимости от поддержки браузером
+if (endcanPlayMP3 !== '' && endcanPlayMP3 !== 'no') {
+  end_music = new Audio("./music/end.mp3");
+} else if (endcanPlayOGG !== '' && endcanPlayOGG !== 'no') {
+  end_music = new Audio("./music/end.ogg");
+}
+else if (endcanPlayWAV !== '' && endcanPlayWAV !== 'no') {
+  end_music = new Audio("./music/end.WAV");
+} else {
+  console.error("Браузер не поддерживает ни MP3, ни OGG форматы");
+}
 
 
 let next_slide = () => {
