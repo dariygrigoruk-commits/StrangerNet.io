@@ -46,7 +46,8 @@ else if (canPlayWAV !== '' && canPlayWAV !== 'no') {
   console.error("Браузер не поддерживает ни MP3, ни OGG форматы");
 }
 
-
+audio.preload = 'auto';
+audio.load();
 
 btn_music.addEventListener('click', () => {
   audio.play();
