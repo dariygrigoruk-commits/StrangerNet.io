@@ -24,7 +24,7 @@ let step = 0;
 
 n_main.forEach(item => {
     item.addEventListener("click", () => {
-        step = 4;
+        step = 3;
         next_slide();
     })
 })
@@ -38,7 +38,7 @@ n_gg.forEach(item => {
 
 n_world.forEach(item => {
     item.addEventListener("click", () => {
-        step = 11;
+        step = 10;
         next_slide();
     })
 })
