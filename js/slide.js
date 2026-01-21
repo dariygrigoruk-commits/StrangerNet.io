@@ -24,7 +24,7 @@ let step = 0;
 
 n_main.forEach(item => {
     item.addEventListener("click", () => {
-        step = 3;
+        step = 2;
         next_slide();
     })
 })
