@@ -558,7 +558,7 @@ nav {
 .all_btn_block {
     animation: four_btn_two ease-in-out 1s;
     position: absolute;
-    bottom: 0px;
+    bottom: -10px;
 
 }
 
